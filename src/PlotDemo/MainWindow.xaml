@@ -1,0 +1,36 @@
+﻿<Window
+    x:Class="PlotDemo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PlotDemo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:plot="clr-namespace:ScottPlot;assembly=ScottPlot"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                <ComboBox Name="cbbDevices" Width="200" />
+                <Button
+                    x:Name="btnStart"
+                    Width="70"
+                    Margin="10,0,0,0"
+                    Content="Start" />
+                <CheckBox x:Name="cbAutoAxis" Margin="10">Auto Axis</CheckBox>
+                <CheckBox x:Name="cbDecibel" Margin="10">Decibel</CheckBox>
+                <TextBlock x:Name="lbData" Margin="10" />
+            </StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <WpfPlot Name="plotPcm" />
+                <WpfPlot Name="plotFFT" Grid.Row="1" />
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>
